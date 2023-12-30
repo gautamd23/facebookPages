@@ -1,0 +1,166 @@
+.main {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin-top: 8px;
+  /* width: 100%; */
+  /* background-color: rgb(255, 255, 255); */
+  /* width:450px; */
+}
+
+.container {
+  /* margin-top: 20px; */
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  background-color: rgb(255, 255, 255);
+  width: 435px;
+  padding: 15px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+.grid {
+  display: grid;
+  grid-template-columns: 195px 195px;
+  justify-content: space-around;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.flexInput {
+  font-size: 15px;
+}
+.mobilePassword {
+  padding: 10px 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 6px;
+  border: 1px solid #ccd0d5;
+}
+.mobilePassword input {
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  /* text-align: left; */
+}
+.dropdown {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* border: 1px solid #ccd0d5; */
+}
+.check {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: -8px;
+}
+.checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  margin: 0px 6px 6px;
+  height: 36px;
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid #ccd0d5;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1c1e21;
+}
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #777;
+}
+.footerText {
+  width: auto;
+  font-size: 11px;
+  padding: 0;
+  /* margin:auto; */
+  text-align: left;
+}
+.signup {
+  margin-top: 10px;
+  background-color: #00a400;
+  padding: 8px 65px;
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  border: none;
+}
+.have {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  color: #1877f2;
+  font-weight: normal;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+.space {
+  padding: 9px 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 6px;
+  border: 1px solid #ccd0d5;
+}
+.space input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  color: #1c1e21;
+}
+
+.labels {
+  display: flex;
+  margin-top: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 0px;
+  font-size: 12px;
+  color: #606770;
+}
+
+.title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  margin-top: -4px;
+}
+.sub {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 5px;
+  margin-top: -3px;
+  font-size: 15px;
+}
+.partitionBtm {
+  border-bottom: 1px solid #dadde1;
+}
+
+/* styles.css */
+.modaloverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.close-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}

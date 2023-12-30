@@ -1,0 +1,18 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: beige; */
+  padding: 20px;
+}
+.nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  list-style: none;
+  align-items: center;
+  text-decoration: none;
+}
+.nav a:link {
+  text-decoration: none;
+}

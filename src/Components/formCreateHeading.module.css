@@ -1,0 +1,16 @@
+.formCreateHeading {
+    display: flex;
+    flex-direction: column;
+    gap:10px
+}
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    margin-top: -4px;
+  }
+  .sub {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 5px;
+    margin-top: -3px;
+    font-size: 15px;
+  }
