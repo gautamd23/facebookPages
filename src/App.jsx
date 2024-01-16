@@ -10,6 +10,9 @@ import CreatePage from "./pages/CreatePage";
 import SignUp from "./pages/SignUp";
 import LoginPage from "./pages/LoginPage";
 
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+
 function App() {
   const [isModalOpen, setModalOpen] = useState(false);
   const [switchComp, setSwitchComp] = useState(false);
@@ -23,6 +26,7 @@ function App() {
     return setSwitchComp(true);
   };
   return (
+    <Provider store={appStore}>
     <BrowserRouter>
       <Routes>
         <Route
@@ -64,6 +68,7 @@ function App() {
         />
       </Routes>
     </BrowserRouter>
+    </Provider>
   );
 }
 

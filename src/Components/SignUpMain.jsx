@@ -6,6 +6,12 @@ import { Link } from "react-router-dom";
 import styless from "../Components/signupmain.module.css";
 import FormCreateHeading from "./FormCreateHeading";
 import FormSignUpHeading from "./FormSignUpHeading";
+import { useRef } from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../utils/firebase";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlicer";
+import { useNavigate } from "react-router-dom";
 
 export default function SignUpMain({
   closeModal,
@@ -18,7 +24,42 @@ export default function SignUpMain({
   setSwitchComp,
   switching,
 }) {
+  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const name = useRef(null);
+  const lastName = useRef(null);
+  const email = useRef(null);
+  const password = useRef(null);
   //   if (!isOpen) return null;
+
+  function handleSingup() {
+    createUserWithEmailAndPassword(
+      auth,
+     
+      email.current.value,
+      password.current.value
+    )
+      .then((userCredential) => {
+        // Signed up
+        const {   email, password } = userCredential.user;
+        dispatch(
+          addUser({
+           
+            email: email,
+            password: password,
+          })
+        );
+        // ...
+        navigate('/login');
+
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+      });
+  }
+
   return (
     <div className={styles.main}>
       <div className={styles.container}>
@@ -30,21 +71,26 @@ export default function SignUpMain({
         <div className={styles.partitionBtm}></div>
         <div className={styles.grid}>
           <div className={styles.space}>
-            <input type="text" placeholder="First Name"></input>
+            <input ref={name} type="text" placeholder="First Name"></input>
           </div>
           <div className={styles.space}>
-            <input type="text" placeholder="Surname"></input>
+            <input ref={lastName} type="text" placeholder="Surname"></input>
           </div>
         </div>
         <div className={styles.mobilePassword}>
           <input
+            ref={email}
             className={styles.flexInput}
             type="text"
             placeholder="Mobile Number or email address"
           ></input>
         </div>
         <div className={styles.mobilePassword}>
-          <input type="passwords" placeholder="New password"></input>
+          <input
+            ref={password}
+            type="password"
+            placeholder="New password"
+          ></input>
         </div>
         <div className={styles.labels}>
           <p>Date of birth</p>
@@ -84,7 +130,9 @@ export default function SignUpMain({
           </p>
         </div>
         <div>
-          <button className={styles.signup}>Sign Up</button>
+          <button className={styles.signup} onClick={handleSingup}>
+            Sign Up
+          </button>
         </div>
         <h3 className={styles.have}>
           <Link to="/login">{btnText}</Link>
